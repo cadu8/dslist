@@ -9,13 +9,13 @@ import org.springframework.stereotype.Service;
 import java.util.ArrayList;
 import java.util.List;
 
-@Service
+@Service //essa anotaçao registra os componentes
 public class GameService {
     @Autowired
     private GameRepository gameRepository;
     public List<GameMinDTO> findAll(){
         List<Game> result = gameRepository.findAll();
-        return result.stream().map(x -> new GameMinDTO(x)).toList();
+        return result.stream().map(x -> new GameMinDTO(x)).toList(); //conversao de lista Game para GameMinDTO
 
     }
 
